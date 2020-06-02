@@ -4,10 +4,12 @@ import "./index.css";
 //import Header from "./Header";
 import Item from "./Item";
 
+const some_img_url = "https://samples.clarifai.com/metro-north.jpg"
+
 function App() {
   return (
     <div>
-      <Item />
+      <Item img_url = {some_img_url} />
     </div>
   );
 }
