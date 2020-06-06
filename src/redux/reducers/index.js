@@ -1,0 +1,1 @@
+export { imagesReducer } from "./images";
