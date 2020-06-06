@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 const ReducedImage = (props) => {
   const [item, setItem] = useState(props.image);
 
+  useEffect(() => {}, [props.image]);
+
   return (
     <>
       <h1>{item.title}</h1>

@@ -4,15 +4,19 @@ import { loadImage } from "./redux/actions/images";
 //import "./App.css"
 import logo from "./logo.svg";
 import ImageList from "./components/ImageList";
+import AddImage from "./components/AddImage";
 import images from "./images";
 
-const useLoadDefaultImages = (images) => {
+
+// Hook for loading some example images.
+const useLoadDefaultImages = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    
     for (let item of images.images) {
       dispatch(loadImage(item));
     }
-  },[]);
+  }, [dispatch]);
   const imagesState = useSelector((state) => state.images);
   return imagesState;
 };
@@ -27,6 +31,7 @@ const App = () => {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <main>
+          <AddImage />
           <ImageList />
         </main>
       </>
@@ -34,14 +39,14 @@ const App = () => {
   }
   return (
     <>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <main>
-          <p> Insert your firs image </p>
-        </main>
-      </>
-  )
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+      <main>
+        <h1> Insert your first image </h1>
+      </main>
+    </>
+  );
 };
 
 export default App;

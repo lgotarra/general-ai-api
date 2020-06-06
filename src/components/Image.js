@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { getData } from "../redux/actions";
 
 
 export default function Image(props) {

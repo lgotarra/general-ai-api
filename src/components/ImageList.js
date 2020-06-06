@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 //import "./ImageList.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ReducedImage from "./ReducedImage";
 
 const useImageMethods = () => {
-  const dispatch = useDispatch();
   const images = useSelector((state) => state.images);
   const loading = useSelector((state) => state.imagesLoading);
   const error = useSelector((state) => state.error);
