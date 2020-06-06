@@ -7,24 +7,27 @@ import ImageList from "./components/ImageList";
 import AddImage from "./components/AddImage";
 import images from "./images";
 
-
 // Hook for loading some example images.
 const useLoadDefaultImages = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    
     for (let item of images.images) {
       dispatch(loadImage(item));
     }
   }, [dispatch]);
-  const imagesState = useSelector((state) => state.images);
-  return imagesState;
 };
 
-const App = () => {
-  const imagesState = useLoadDefaultImages(images);
+const useGetStates = () => {
+  const imagesState = useSelector((state) => state.images);
+  const loadingState = useSelector((state) => state.loading);
+  return [imagesState, loadingState];
+};
 
-  if (imagesState.length !== 0) {
+const App = ({match: {params}}) => {
+  //useLoadDefaultImages(images);
+  const [images, loading] = useGetStates();
+
+  if (images.length !== 0) {
     return (
       <>
         <header className="App-header">
@@ -37,6 +40,18 @@ const App = () => {
       </>
     );
   }
+  if (loading) {
+    return (
+      <>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <main>
+          <p>Loading...</p>
+        </main>
+      </>
+    );
+  }
   return (
     <>
       <header className="App-header">
@@ -44,6 +59,7 @@ const App = () => {
       </header>
       <main>
         <h1> Insert your first image </h1>
+        <AddImage />
       </main>
     </>
   );
