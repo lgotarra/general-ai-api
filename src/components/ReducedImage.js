@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //import "./ReducedImage.css";
 
@@ -7,9 +8,10 @@ const ReducedImage = (props) => {
 
   useEffect(() => {}, [props.image]);
 
+
   return (
     <>
-      <h1>{item.title}</h1>
+      <Link to={"/image/" + item.id}>{item.title}</Link>
       <img
         src={item.url}
         style={{ height: "100%", maxHeight: "300px" }}

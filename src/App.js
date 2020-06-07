@@ -23,7 +23,7 @@ const useGetStates = () => {
   return [imagesState, loadingState];
 };
 
-const App = ({match: {params}}) => {
+const App = () => {
   //useLoadDefaultImages(images);
   const [images, loading] = useGetStates();
 

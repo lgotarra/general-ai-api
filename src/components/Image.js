@@ -1,23 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Image(props) {
-  const [data, setData] = useState(props.image);
+  const [image, setData] = useState(props.image);
 
-  useEffect(() => {
-    setData(getData(props.image));
-  }, [props]);
 
   return (
-    <div>
-      <h1>Result</h1>
-      <ul>
-        {data.data.outputs[0].data.concepts.map((item) => (
-          <li key={item.id}>
-            <strong>{item.name}</strong>: {item.value}
-          </li>
+    <>
+    <Link to="/">Home</Link>
+    <img
+        src={image.url}
+        style={{ height: "100%", maxHeight: "300px" }}
+        alt={image.title}
+      ></img>
+      <h2>Tags</h2>
+      <div>
+        {image.data.map((result) => (
+          <span key={result.id}>
+            <strong>{result.name}</strong>: {result.value}
+          </span>
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   );
 }
