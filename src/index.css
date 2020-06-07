@@ -1,13 +1,61 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 40px 0px 40px;
+}
+
+header .App-logo {
+  width: 40%;
+}
+
+header .quote {
+  margin: 50px;
+  padding: 30px 50px;
+  background-color: #f9f9fa;
+  color: #5a656d;
+  font-weight: 500;
+  font-style: oblique;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/* unvisited link */
+header a:link {
+  color: #72C0C3;
+  text-decoration: none;
+}
+
+/* visited link */
+header a:visited {
+  color: #72C0C3;
+  text-decoration: none;
+}
+
+/* mouse over link */
+header a:hover {
+  color: #0E088C;
+  text-decoration: underline;
+}
+
+/* selected link */
+header a:active {
+  color: #0E088C;
+  text-decoration: none;
 }

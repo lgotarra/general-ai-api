@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-//import "./ImageList.css";
+import React from "react";
 import { useSelector } from "react-redux";
 import ReducedImage from "./ReducedImage";
 import CustomLink from "./CustomLink";
+import "./ImageList.css";
 
 const useImageMethods = () => {
   const images = useSelector((state) => state.images);
@@ -14,14 +14,15 @@ const useImageMethods = () => {
 const ImageList = () => {
   const [images, loading, error] = useImageMethods();
 
-  useEffect(() => {}, [images.length]);
-
   if (loading) {
-    return <div>Loading...</div>;
+    document.body.style.cursor = "wait";
   }
+
   if (error) {
     return <div>ERROR: {error.error.toString()}</div>;
   }
+
+  document.body.style.cursor = "default";
 
   return (
     <div>

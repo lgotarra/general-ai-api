@@ -1,0 +1,112 @@
+.ExtendedImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 40px;
+}
+
+.content {
+  padding-top: 40px;
+}
+
+.stickyBar div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.stickyBar div h3 {
+  padding: 1em 0;
+  margin: 0;
+  color: #5a656d;
+}
+
+.stickyBar div h3:hover {
+  color: rgb(0, 0, 0);
+}
+
+.stickyBar {
+  position: fixed;
+  top: 0;
+  background-color: rgba(112, 191, 194, 0.2);
+  width: 100%;
+  margin: 0px -40px;
+  padding-left: 20px;
+}
+
+.ExtendedImage .returnHomeLogo {
+  width: 40px;
+  margin: 20px;
+}
+
+.returnHome:hover  {
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+}
+
+.ExtendedImage h1 {
+  text-align: right;
+  margin-right: -40px;
+  margin-bottom: 10px;
+  padding: 30px 30px 30px 60px;
+  background-color: #dbdddb;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.extendedTagList h2 {
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(112, 191, 194);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.extendedTagList {
+  margin: 30px 25px;
+  width: 100%;
+  background-color: rgba(112, 191, 194, 0.5);
+  border-radius: 15px;
+}
+
+.ExtendedImage img {
+  margin: 30px 5px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.ExtendedImage ul {
+  padding: 0px 25px 0px 20px;
+  list-style-type: none;
+}
+
+.ExtendedImage li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: stretch;
+}
+
+.ExtendedImage li span {
+  width: 100%;
+  margin: 0.3em;
+  padding: 0 30px;
+}
+
+.tagName {
+  text-align: left;
+}
+
+.tagValue {
+  text-align: right;
+}

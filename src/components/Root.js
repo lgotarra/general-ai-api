@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import App from "../App";
+import App from "./App";
 import { Provider, useSelector } from "react-redux";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -9,7 +9,6 @@ const ExtendedImage = ({ match }) => {
   let imageID = match.params.imageid;
   const images = useSelector((state) => state.images);
   const result = images.find(({ id }) => id === imageID);
-  console.log(result)
   return (<Image image={result} />);
 }
 
