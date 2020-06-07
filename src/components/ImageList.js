@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 //import "./ImageList.css";
 import { useSelector } from "react-redux";
 import ReducedImage from "./ReducedImage";
+import CustomLink from "./CustomLink";
 
 const useImageMethods = () => {
   const images = useSelector((state) => state.images);
@@ -15,8 +16,6 @@ const ImageList = () => {
 
   useEffect(() => {}, [images.length]);
 
-
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -27,9 +26,14 @@ const ImageList = () => {
   return (
     <div>
       {images.map((item) => (
-        <div className="reducedImage" key={item.id}>
+        <CustomLink
+          tag="div" // tag name
+          to={"/image/" + item.id} // path
+          className="reducedImage" //className
+          key={item.id}
+        >
           <ReducedImage image={item} />
-        </div>
+        </CustomLink>
       ))}
     </div>
   );

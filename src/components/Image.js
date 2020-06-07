@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Image(props) {
-  const [image, setData] = useState(props.image);
+  const [image] = useState(props.image);
 
 
   return (
